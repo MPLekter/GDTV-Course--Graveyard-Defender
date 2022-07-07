@@ -6,6 +6,8 @@ using UnityEngine;
 public class EnemyMover : MonoBehaviour
 {
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
+    [SerializeField] float xOffset = -5f;
+    [SerializeField] float waitTime = 1f;
 
 
 
@@ -19,9 +21,16 @@ public class EnemyMover : MonoBehaviour
     {
         foreach (Waypoint waypoint in path)
         {
-            Debug.Log(waypoint.name);
-            yield return new WaitForSeconds(1f);
+            transform.position = waypoint.transform.position; 
+            SetXOffset();
+            yield return new WaitForSeconds(waitTime);
         }
+    }
+
+    void SetXOffset()
+    {
+        transform.position += new Vector3(xOffset, 0f, 0f);
+        //transform.Translate(new Vector3(-5f, 0f, 0f)); //this also works.
     }
 }
 
