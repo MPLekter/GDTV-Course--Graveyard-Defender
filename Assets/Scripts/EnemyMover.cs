@@ -11,13 +11,17 @@ public class EnemyMover : MonoBehaviour
 
     void Start()
     {
-        PrintWaypointName();    
+        StartCoroutine(FollowPath());   
+        
     }
 
-    void PrintWaypointName()
+    IEnumerator FollowPath()
     {
         foreach (Waypoint waypoint in path)
+        {
             Debug.Log(waypoint.name);
+            yield return new WaitForSeconds(1f);
+        }
     }
 }
 
