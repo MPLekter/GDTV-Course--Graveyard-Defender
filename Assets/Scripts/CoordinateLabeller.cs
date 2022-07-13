@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
-using System;
+using UnityEditor.SceneManagement; //needed for bug fix with prefabs renamed to 0,0 
+
 
 [ExecuteAlways]
 public class CoordinateLabeller : MonoBehaviour
@@ -18,7 +20,7 @@ public class CoordinateLabeller : MonoBehaviour
 
     void Update()
     {
-    if (!Application.isPlaying)
+    if (!Application.isPlaying && PrefabStageUtility.GetPrefabStage(gameObject) == null)
         {
             DisplayCoordinates(); //all the time in editor
             UpdateObjectName();
