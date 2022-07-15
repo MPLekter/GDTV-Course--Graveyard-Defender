@@ -53,11 +53,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1365909096123495303, guid: 7fa3ab2823ef35d45ac9edbd0d1f5a95, type: 3}
       propertyPath: m_Name
-      value: CornerTile
+      value: CornerTile0
       objectReference: {fileID: 0}
     - target: {fileID: 5734406699058498726, guid: 7fa3ab2823ef35d45ac9edbd0d1f5a95, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -2432090755550338912, guid: 626410dc07212d749823da2540a223bb, type: 3}
+    - target: {fileID: 6014450114519085185, guid: 7fa3ab2823ef35d45ac9edbd0d1f5a95, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fa3ab2823ef35d45ac9edbd0d1f5a95, type: 3}
