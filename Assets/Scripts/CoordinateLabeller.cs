@@ -20,7 +20,7 @@ public class CoordinateLabeller : MonoBehaviour
     void Awake()
     {
         coordinateLabel = GetComponent<TextMeshPro>();
-        coordinateLabel.enabled = false;
+        coordinateLabel.enabled = true;
         waypoint = GetComponentInParent<Waypoint>(); //remember waypoints are in tiles. tiles are parents of text (labeller)
         DisplayCoordinates(); //just once while playing game
     }
@@ -33,7 +33,6 @@ public class CoordinateLabeller : MonoBehaviour
             UpdateObjectName();
         }
 
-        Debug.Log(waypoint.IsPlaceable); //BUG: does not print anything!
         ColorCoordinates();
         ToggleLabels();
     }
@@ -52,7 +51,7 @@ public class CoordinateLabeller : MonoBehaviour
         }
        else
         {
-            coordinateLabel.color = blockedColor; //BUG: does not change!
+            coordinateLabel.color = blockedColor; 
         }
     }
 
