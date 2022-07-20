@@ -34,13 +34,22 @@ public class EnemyMover : MonoBehaviour
 
         foreach(Transform pathTile in pathParent.transform)
         {
-            path.Add(pathTile.GetComponent<Waypoint>());
+            Waypoint waypoint = pathTile.GetComponent<Waypoint>();
+            if(waypoint != null)
+            {
+            path.Add(waypoint);
+            }
         }
     }
 
     void ReturnToStart() //in case enemy spawns somewhere different than path[0], this method moves it to path[0]'s transform pos.
     {
         transform.position = path[0].transform.position;
+    }
+    void FinishPath()
+    {
+        enemy.StealGold();
+        gameObject.SetActive(false);
     }
     IEnumerator FollowPath()
     {
@@ -61,14 +70,8 @@ public class EnemyMover : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
 
-            //not smooth movement down here
-            //transform.position = waypoint.transform.position; 
-            //SetXOffset();
-            //yield return new WaitForSeconds(waitTime);
         }
-        //Destroy(gameObject); //destroys the object after the path is over.
-        enemy.StealGold();
-        gameObject.SetActive(false);
+        FinishPath();
     }
 
     //void SetXOffset()

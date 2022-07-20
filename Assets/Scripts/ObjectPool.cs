@@ -6,8 +6,8 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     [SerializeField] GameObject enemyPrefab;
-    [SerializeField] int poolSize = 5;
-    [SerializeField] float spawnTimer = 1f;
+    [SerializeField] [Range(0, 40)] int poolSize = 5;
+    [SerializeField] [Range(0.1f, 29f)] float spawnTimer = 1f;
 
     GameObject[] pool;
 
@@ -22,7 +22,7 @@ public class ObjectPool : MonoBehaviour
     }
     void PopulatePool()
     {
-        pool = new GameObject[poolSize];
+        pool = new GameObject[poolSize]; //poolSize must be positive. 
 
         for (int i = 0; i < pool.Length; i++)
         {
@@ -45,7 +45,7 @@ public class ObjectPool : MonoBehaviour
     }
     IEnumerator SpawnEnemy()
     {
-        while(true)
+        while(true) //danger! infinite loop here. spawnTimer must be positive, not 0, not negative.
         {
             EnableObjectInPool();
             yield return new WaitForSeconds(spawnTimer);

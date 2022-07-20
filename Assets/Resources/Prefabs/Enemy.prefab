@@ -87,7 +87,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30016eaee8e5edd4895ed9fc5f62a45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 3
+  maxHP: 4
+  boostHP: 1
 --- !u!114 &260701769857353202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,3 +122,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a1389b26b243941b9931e5d778e4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldReward: 25
+  goldPenalty: 25

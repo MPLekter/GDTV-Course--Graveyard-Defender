@@ -3,15 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Enemy))]
+
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int maxHP = 3;
     int currentHP = 0;
+    [Tooltip("Adds this amount to maxHP on death")]
+    [SerializeField] int boostHP = 1;
+
     Enemy enemy;
 
     void OnEnable()
     {
-        currentHP = maxHP; 
+        currentHP = maxHP; //3 first and then + boost on every death.
     }
 
     void Start()
@@ -31,6 +36,7 @@ public class EnemyHealth : MonoBehaviour
         {
             //Destroy(gameObject);
             enemy.RewardGold();
+            maxHP += boostHP;
             gameObject.SetActive(false);
         }
     }

@@ -7,6 +7,7 @@ using UnityEditor.SceneManagement; //needed for bug fix with prefabs renamed to 
 
 
 [ExecuteAlways]
+[RequireComponent(typeof(TextMeshPro))]
 public class CoordinateLabeller : MonoBehaviour
 {
     [SerializeField] Color defaultColor = Color.yellow;
@@ -33,7 +34,7 @@ public class CoordinateLabeller : MonoBehaviour
             UpdateObjectName();
         }
 
-        ColorCoordinates();
+        SetCoordinateLabelColor();
         ToggleLabels();
     }
     void ToggleLabels()
@@ -43,7 +44,7 @@ public class CoordinateLabeller : MonoBehaviour
             coordinateLabel.enabled = !coordinateLabel.enabled;
         }
     }
-    void ColorCoordinates()
+    void SetCoordinateLabelColor()
     {
        if (waypoint.IsPlaceable)
         {
