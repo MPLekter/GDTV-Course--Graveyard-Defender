@@ -56,15 +56,18 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\TargetLocator.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool.cs" />
-    <Compile Include="Assets\Scripts\Tower.cs" />
-    <Compile Include="Assets\Scripts\EnemyHealth.cs" />
-    <Compile Include="Assets\Scripts\Waypoint.cs" />
-    <Compile Include="Assets\Scripts\Bank.cs" />
-    <Compile Include="Assets\Scripts\EnemyMover.cs" />
-    <Compile Include="Assets\Scripts\CoordinateLabeller.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Enemy.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\TargetLocator.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\ObjectPool.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Tower.cs" />
+    <Compile Include="Assets\Scripts\PureC#\Node.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Pathfinder.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\GridManager.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Tile.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Bank.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\EnemyMover.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\CoordinateLabeller.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMPro.cginc" />
