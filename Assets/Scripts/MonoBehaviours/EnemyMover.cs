@@ -21,9 +21,9 @@ public class EnemyMover : MonoBehaviour
 
     void OnEnable()
     {
-        FindPath();
         ReturnToStart();
-        StartCoroutine(FollowPath());   
+        RecalculatePath(true);
+   
     }
 
     void Awake()
@@ -32,10 +32,24 @@ public class EnemyMover : MonoBehaviour
         gridManager = FindObjectOfType<GridManager>();
         pathfinder = FindObjectOfType<Pathfinder>();
     }
-    void FindPath()
+    void RecalculatePath(bool resetPath)
     {
+        //make a decision what coords to use
+        Vector2Int coordinates = new Vector2Int();
+
+        if(resetPath)
+        {
+            coordinates = pathfinder.StartCoordinates;
+        }
+        else
+        {
+            coordinates = gridManager.GetCoordinatesFromPosition(transform.position);
+        }
+
+        StopAllCoroutines();
         path.Clear(); //clears instead of building up a long long path.
-        path = pathfinder.GetNewPath();
+        path = pathfinder.GetNewPath(coordinates);
+        StartCoroutine(FollowPath());
     }
 
     void ReturnToStart() //in case enemy spawns somewhere different than path[0], this method moves it to path[0]'s transform pos.
@@ -49,7 +63,7 @@ public class EnemyMover : MonoBehaviour
     }
     IEnumerator FollowPath()
     {
-        for(int i = 0; i < path.Count; i++)
+        for(int i = 1; i < path.Count; i++)
         {
             //smooth movement here
             Vector3 startPos = transform.position;

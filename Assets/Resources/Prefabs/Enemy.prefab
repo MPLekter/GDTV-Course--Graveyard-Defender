@@ -87,8 +87,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30016eaee8e5edd4895ed9fc5f62a45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 4
-  boostHP: 1
+  maxHP: 8
+  boostHP: 3
 --- !u!114 &260701769857353202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,14 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3e3874db5915a41be8d355e85bc804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   speed: 0.33
 --- !u!114 &1787733886113770092
 MonoBehaviour:
